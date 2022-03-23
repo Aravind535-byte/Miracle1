@@ -1,0 +1,29 @@
+<!-- views/pages/message-compose.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ('../partials/header.ejs') %>
+</head>
+<body class="container">
+    <main>
+        <div class="jumbotron">
+            <h2>Compose & Send</h2>
+        </div>
+        <div class="compose-message">
+           <form method="POST" action="/send-otp">
+                <input type="text" name="contact" value="<%= messageForContact.contact%>" readonly>
+                <input type="text" name="text_message" value="Hi. Your OTP is:<%= messageForContact.random%>." readonly>
+                <input type="submit" value="Send">
+           </form>
+        </div>
+    </main>
+
+    <footer>
+    <center>
+        <% include ('../partials/footer.ejs') %>
+    </center>
+    </footer>
+    
+</body>
+</html>

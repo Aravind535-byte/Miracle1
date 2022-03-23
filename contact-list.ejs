@@ -1,0 +1,35 @@
+<!-- views/pages/contact-list.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ('../partials/header.ejs')%>
+</head>
+
+<body class="container">
+    <main>
+        <div class="jumbotron">
+            <h3>Contact List</h3>
+        </div>
+        <div class="contacts-div">
+            <table>
+                <% for(var i=0; i < contactList.length; i++) { %>                  
+                    <%= name = contactList[i].Name + " " + contactList[i].Surname%>
+                    <%=  contact = contactList[i].Contact%>
+                
+                   <tr>
+                    <td><a href="/contact-info.ejs?<%=contact%>"><%=name%></a></td>
+                   </tr>
+                <% } %>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+    <center>
+        <% include ('../partials/footer.ejs') %>
+    </center>
+    </footer>    
+</body>
+
+</html>

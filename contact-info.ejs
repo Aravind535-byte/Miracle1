@@ -1,0 +1,29 @@
+<!-- views/pages/contact-info.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include('../partials/header.ejs') %>
+</head>
+<body class="container">
+    <main>
+        <div class="jumbotron">
+            <h2>Contact Info</h2>
+        </div>
+        <div class="contact-info">
+           <table cellspacing="30">
+                <tr><td><h4><%= record.Name + " " + record.Surname %></h4></td> <td><h4><%=record.Contact%></h4></td>
+                <td><a href="/message-compose.ejs?<%=record.Contact%>"><button style="color: #cc1100; border: 1px"><b>Send Message</b></button></a></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+    <center>
+        <% ('include ../partials/footer.ejs') %>
+    </center>
+    </footer>
+    
+</body>
+</html>
